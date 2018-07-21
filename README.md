@@ -1,2 +1,10 @@
 # Final_Project
-Welcome to my Capstone Project
+This project started out as an investigation into training a machine learing model to predict genres utilizing data scraped from the spotify api. Further investigation led to a cross examination of how human intuition, particulary my own intuition, compares to machine learning clustering algorithms.
+
+The first part of this project is about learning to use spotipy, a python wrapper for the spotify api. Scrapped data was saved as .csv files. Some data munging came next dealing with nulls and duplicated data. The second part was the most crucial to this project. The song data from spotify came with multiple genres attached to an artist/song. To make a predictor, each song would need a concise genre to target. This led me to a binning function where each song was chosen carefully into 12 genres. This function added subjectivity to the modeling process as different people will interperet what genres should be binned into. Once all the songs were binned, more munging followed as songs which did not fit into any genre were given NaN values and removed.
+
+An extensive amount of Exploratory Data Analysis followed. Every feature of each genre was charted in order to see, similarities, differences and to search for outlier values. Seeing each genre's features graphed out would be the first test of the binning function and its effectiveness.
+
+The modeling process than followed. The data was split into a training, validation and testing sets. Many classification models were employed including, Logistic Regression, Random Forest, Stochastic Gradient Descent, Extreme Gradient Boosting and a Neural Network. These model were fitted on the training set, tunned on validation and ultimatly scored on the testing set.
+
+Next was exploring how well a machine learning alogrithm, know as k-means cluster, can produce 12 distinct genres. 12 distict clusters were made and treated as genres. Each cluster was given extensive exploratory data analysis, with charts of each cluster's feature. The last part of the project was seeing how the 12 binned genres compared to the 12 clusters.
